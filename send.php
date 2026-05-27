@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Konfigurasjon — endre disse ved behov
-$mottaker_epost = 'matas@grevent.no';
+$mottaker_epost = 'matas.vin@gmail.com';
 $mottaker_navn  = 'Grevent AS';
 $emne_prefix    = '[Grevent.no] Ny forespørsel: ';
 
@@ -74,8 +74,8 @@ $html .= '</body></html>';
 // Bygg MIME-e-post (plain text + HTML)
 $boundary = '----=_Part_' . uniqid();
 
-$headers  = "From: \"$navn\" <$epost>\r\n";
-$headers .= "Reply-To: $epost\r\n";
+$headers  = "From: \"Grevent Kontaktskjema\" <post@grevent.no>\r\n";
+$headers .= "Reply-To: \"$navn\" <$epost>\r\n";
 $headers .= "To: \"$mottaker_navn\" <$mottaker_epost>\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: multipart/alternative; boundary=\"$boundary\"\r\n";
