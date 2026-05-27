@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grevent AS</title>
+    <title>Grevent AS – Teknisk produksjon for events</title>
     <meta name="description" content="Grevent AS leverer profesjonell teknisk produksjon for konferanser og events. Lyd, lys, bilde og streaming med eget utstyr og erfarne teknikere.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-    
         :root {
             --color-bg: #ffffff;
             --color-bg-elevated: #f7f8fa;
-            --color-bg-card: #ffffff;
-            --color-bg-card-hover: #f0f4f8;
             --color-border: #e2e5ea;
             --color-border-light: #d0d5dc;
             --color-text: #2d2d32;
@@ -23,231 +20,99 @@
             --color-accent: #00aeef;
             --color-accent-hover: #009ad8;
             --color-accent-glow: rgba(0, 174, 239, 0.1);
-            --color-accent-secondary: #58595b;
             --color-accent-dark: #007bb5;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
             --radius-sm: 8px;
             --radius-md: 12px;
             --radius-lg: 16px;
-            --radius-xl: 24px;
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
             --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-            --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-        body {
-            font-family: var(--font-body);
-            background: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-text); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
         img { max-width: 100%; display: block; }
         a { color: var(--color-accent); text-decoration: none; transition: color var(--transition); }
         a:hover { color: var(--color-accent-hover); }
-
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        .section { padding: 100px 0; }
-        .section-label {
-            font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500;
-            color: var(--color-accent); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px;
-        }
+        .section { padding: 80px 0; }
+        .section-label { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500; color: var(--color-accent); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
         .section-title { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
         .section-subtitle { font-size: 1.1rem; color: var(--color-text-muted); max-width: 600px; margin-bottom: 48px; }
 
         /* NAV */
-        .nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: rgba(255,255,255,0.92); backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--color-border); transition: var(--transition);
-        }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--color-border); transition: var(--transition); }
         .nav.scrolled { box-shadow: var(--shadow-sm); }
         .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
         .nav-logo img { height: 36px; width: auto; }
-        .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
-        .nav-links a {
-            color: var(--color-text-muted); font-size: 0.9rem; font-weight: 500;
-            transition: color var(--transition); position: relative;
-        }
-        .nav-links a::after {
-            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
-            background: var(--color-accent); transition: width var(--transition);
-        }
+        .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+        .nav-links a { color: var(--color-text-muted); font-size: 0.9rem; font-weight: 500; transition: color var(--transition); position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--color-accent); transition: width var(--transition); }
         .nav-links a:hover { color: var(--color-text); }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-cta {
-            background: var(--color-accent) !important; color: #fff !important;
-            padding: 8px 20px !important; border-radius: 8px; font-weight: 600 !important;
-        }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-links a.active { color: var(--color-text); }
+        .nav-cta { background: var(--color-accent) !important; color: #fff !important; padding: 8px 20px !important; border-radius: 8px; font-weight: 600 !important; }
         .nav-cta:hover { background: var(--color-accent-hover) !important; transform: translateY(-1px); }
         .nav-cta::after { display: none !important; }
         .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
         .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--color-text); margin: 6px 0; transition: var(--transition); }
 
-        /* HERO */
-        .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 72px; }
-        .hero::before {
-            content: ''; position: absolute; inset: 0;
-            background: radial-gradient(ellipse 70% 50% at 70% 20%, rgba(0,174,239,0.06) 0%, transparent 60%),
-                        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(88,89,91,0.04) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        .hero-grid {
-            position: absolute; inset: 0;
-            background-image: linear-gradient(rgba(0,174,239,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,174,239,0.04) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse 60% 50% at 60% 40%, black 10%, transparent 60%);
-            -webkit-mask-image: radial-gradient(ellipse 60% 50% at 60% 40%, black 10%, transparent 60%);
-        }
-        .hero-content { position: relative; z-index: 1; max-width: 740px; }
-        .hero-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: var(--color-bg-elevated); border: 1px solid var(--color-border);
-            border-radius: 100px; padding: 6px 16px; font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 32px;
-        }
-        .hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-accent); animation: pulse 2s ease-in-out infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-        .hero h1 { font-size: clamp(2.8rem, 6vw, 4.2rem); font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 24px; }
-        .hero h1 .gradient-text {
-            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
-        .hero p { font-size: 1.15rem; color: var(--color-text-muted); max-width: 540px; margin-bottom: 40px; line-height: 1.8; }
-        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-        .btn {
-            display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px;
-            border-radius: var(--radius-md); font-size: 0.95rem; font-weight: 600;
-            cursor: pointer; transition: all var(--transition); border: none; font-family: var(--font-body);
-        }
+        /* BUTTONS */
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: var(--radius-md); font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all var(--transition); border: none; font-family: var(--font-body); text-decoration: none; }
         .btn-primary { background: var(--color-accent); color: #fff; box-shadow: 0 4px 16px rgba(0,174,239,0.25); }
         .btn-primary:hover { background: var(--color-accent-hover); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,174,239,0.35); color: #fff; }
         .btn-secondary { background: var(--color-bg); color: var(--color-text); border: 1px solid var(--color-border); }
         .btn-secondary:hover { background: var(--color-bg-elevated); border-color: var(--color-border-light); transform: translateY(-2px); color: var(--color-text); }
+
+        /* HERO */
+        .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 72px; }
+        .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 70% 20%, rgba(0,174,239,0.06) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 20% 80%, rgba(88,89,91,0.04) 0%, transparent 50%); pointer-events: none; }
+        .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,174,239,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,174,239,0.04) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 60% 50% at 60% 40%, black 10%, transparent 60%); -webkit-mask-image: radial-gradient(ellipse 60% 50% at 60% 40%, black 10%, transparent 60%); }
+        .hero-content { position: relative; z-index: 1; max-width: 740px; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: 100px; padding: 6px 16px; font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 32px; }
+        .hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-accent); animation: pulse 2s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .hero h1 { font-size: clamp(2.8rem, 6vw, 4.2rem); font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 24px; }
+        .hero h1 .gradient-text { background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { font-size: 1.15rem; color: var(--color-text-muted); max-width: 540px; margin-bottom: 40px; line-height: 1.8; }
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
         .hero-stats { display: flex; gap: 48px; margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--color-border); }
         .hero-stat-value { font-size: 2rem; font-weight: 800; letter-spacing: -1px; }
         .hero-stat-label { font-size: 0.85rem; color: var(--color-text-subtle); margin-top: 2px; }
 
-        /* ABOUT */
-        .about { background: var(--color-bg-elevated); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-        .about-text p { color: var(--color-text-muted); margin-bottom: 20px; font-size: 1.05rem; }
-        .about-features { display: grid; gap: 16px; margin-top: 32px; }
-        .about-feature {
-            display: flex; align-items: flex-start; gap: 16px; padding: 16px;
-            background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: all var(--transition);
-        }
-        .about-feature:hover { box-shadow: var(--shadow-sm); border-color: var(--color-border-light); }
-        .about-feature-icon {
-            width: 40px; height: 40px; border-radius: var(--radius-sm);
-            background: var(--color-accent-glow); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-        }
-        .about-feature h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 2px; }
-        .about-feature p { font-size: 0.85rem; color: var(--color-text-subtle); margin: 0; }
-        .about-image { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3; background: var(--color-bg-elevated); border: 1px solid var(--color-border); }
-        .about-image img { width: 100%; height: 100%; object-fit: cover; }
-        .about-image-placeholder {
-            width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;
-            color: var(--color-text-subtle); font-size: 0.9rem; gap: 12px;
-            background: linear-gradient(135deg, var(--color-bg-elevated) 0%, #eef1f5 100%);
-        }
-        .about-image-placeholder svg { opacity: 0.3; }
-        .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 600px; }
-        .team-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 24px; text-align: center; transition: all var(--transition); }
-        .team-card:hover { border-color: var(--color-border-light); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-        .team-avatar {
-            width: 72px; height: 72px; border-radius: 50%;
-            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
-            margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem; font-weight: 700; color: #fff;
-        }
-        .team-name { font-weight: 600; font-size: 1rem; margin-bottom: 4px; }
-        .team-role { font-size: 0.85rem; color: var(--color-text-subtle); }
-
-        /* EQUIPMENT */
-        .equipment-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-        .eq-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; transition: all var(--transition); }
-        .eq-card:hover { border-color: var(--color-accent); transform: translateY(-4px); box-shadow: var(--shadow-md); }
-        .eq-card-image {
-            height: 200px; background: linear-gradient(135deg, var(--color-bg-elevated) 0%, #eaeff5 100%);
-            display: flex; align-items: center; justify-content: center; overflow: hidden;
-        }
-        .eq-card-image img { width: 100%; height: 100%; object-fit: cover; }
-        .eq-card-image svg { width: 64px; height: 64px; color: var(--color-text-subtle); opacity: 0.3; }
-        .eq-card-body { padding: 24px; }
-        .eq-card-category { font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
-        .eq-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
-        .eq-card p { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; }
-        .eq-card-specs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-        .eq-spec-tag { font-size: 0.75rem; padding: 4px 10px; background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: 100px; color: var(--color-text-subtle); font-family: var(--font-mono); }
-
-        /* PACKAGES */
-        .packages { background: var(--color-bg-elevated); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
-        .package-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-        .package-card {
-            background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg);
-            padding: 36px; position: relative; transition: all var(--transition); display: flex; flex-direction: column;
-        }
-        .package-card:hover { border-color: var(--color-border-light); transform: translateY(-4px); box-shadow: var(--shadow-md); }
-        .package-card.featured { border-color: var(--color-accent); box-shadow: 0 0 40px rgba(0,174,239,0.08); }
-        .package-badge {
-            position: absolute; top: -1px; right: 24px; background: var(--color-accent); color: #fff;
-            font-size: 0.75rem; font-weight: 600; padding: 6px 14px;
-            border-radius: 0 0 var(--radius-sm) var(--radius-sm); text-transform: uppercase; letter-spacing: 1px;
-        }
-        .package-name { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
-        .package-desc { font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 24px; }
-        .package-price { margin-bottom: 28px; }
-        .package-price-label { font-size: 0.8rem; color: var(--color-text-subtle); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-        .package-price-value { font-size: 2.2rem; font-weight: 800; letter-spacing: -1px; }
-        .package-price-unit { font-size: 0.9rem; font-weight: 400; color: var(--color-text-muted); }
-        .package-includes { list-style: none; margin-bottom: 32px; flex-grow: 1; }
-        .package-includes li { padding: 8px 0; font-size: 0.9rem; color: var(--color-text-muted); display: flex; align-items: flex-start; gap: 12px; border-bottom: 1px solid var(--color-border); }
-        .package-includes li:last-child { border-bottom: none; }
-        .package-check { color: var(--color-accent); flex-shrink: 0; margin-top: 2px; }
-        .package-card .btn { width: 100%; justify-content: center; }
-
-        /* CONTACT */
-        .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; }
-        .contact-info h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; }
-        .contact-info > p { color: var(--color-text-muted); margin-bottom: 32px; font-size: 1.05rem; }
-        .contact-details { display: flex; flex-direction: column; gap: 20px; }
-        .contact-item { display: flex; align-items: center; gap: 16px; }
-        .contact-icon {
-            width: 44px; height: 44px; border-radius: var(--radius-sm); background: var(--color-accent-glow);
-            border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-        }
-        .contact-icon svg { width: 20px; height: 20px; color: var(--color-accent); }
-        .contact-item-label { font-size: 0.8rem; color: var(--color-text-subtle); margin-bottom: 2px; }
-        .contact-item-value { font-weight: 500; font-size: 0.95rem; }
-        .contact-form { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow-sm); }
-        .form-group { margin-bottom: 20px; }
-        .form-label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 6px; color: var(--color-text-muted); }
-        .form-input, .form-textarea, .form-select {
-            width: 100%; padding: 12px 16px; background: var(--color-bg-elevated);
-            border: 1px solid var(--color-border); border-radius: var(--radius-sm);
-            color: var(--color-text); font-family: var(--font-body); font-size: 0.95rem; transition: border-color var(--transition);
-        }
-        .form-input:focus, .form-textarea:focus, .form-select:focus { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px var(--color-accent-glow); background: var(--color-bg); }
-        .form-textarea { min-height: 120px; resize: vertical; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        /* PREVIEW CARDS */
+        .preview-section { background: var(--color-bg-elevated); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+        .preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .preview-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 28px 24px; transition: all var(--transition); display: flex; flex-direction: column; gap: 12px; color: var(--color-text); }
+        .preview-card:hover { border-color: var(--color-accent); transform: translateY(-4px); box-shadow: var(--shadow-md); color: var(--color-text); }
+        .preview-card-icon { width: 48px; height: 48px; border-radius: var(--radius-sm); background: var(--color-accent-glow); border: 1px solid rgba(0,174,239,0.15); display: flex; align-items: center; justify-content: center; }
+        .preview-card-icon svg { color: var(--color-accent); }
+        .preview-card h3 { font-size: 1.05rem; font-weight: 600; }
+        .preview-card p { font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.5; flex-grow: 1; }
+        .preview-card-link { font-size: 0.85rem; font-weight: 600; color: var(--color-accent); display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; }
+        .preview-card:hover .preview-card-link { gap: 10px; }
 
         /* FOOTER */
         .footer { background: #2d2d32; color: #fff; padding: 48px 0 32px; }
-        .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-        .footer-logo img { height: 28px; width: auto; filter: brightness(0) invert(1); }
-        .footer-info { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
-        .footer-info a { color: rgba(255,255,255,0.8); }
-        .footer-info a:hover { color: #fff; }
-        .footer-bottom { margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+        .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; }
+        .footer-brand { max-width: 240px; }
+        .footer-logo img { height: 28px; width: auto; filter: brightness(0) invert(1); margin-bottom: 10px; }
+        .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+        .footer-nav-group h4 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
+        .footer-nav-group a { display: block; font-size: 0.875rem; color: rgba(255,255,255,0.6); margin-bottom: 8px; transition: color var(--transition); }
+        .footer-nav-group a:hover { color: #fff; }
+        .footer-contact { font-size: 0.875rem; color: rgba(255,255,255,0.6); line-height: 2; }
+        .footer-contact a { color: rgba(255,255,255,0.8); }
+        .footer-contact a:hover { color: #fff; }
+        .footer-bottom { margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; font-size: 0.8rem; color: rgba(255,255,255,0.4); }
 
         /* ANIMATIONS */
         .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
@@ -256,108 +121,29 @@
             .nav-toggle { display: block; }
             .hero h1 { font-size: 2.4rem; }
             .hero-stats { flex-direction: column; gap: 24px; }
-            .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .about-image { order: -1; }
-            .team-grid { max-width: 100%; }
-            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-            .form-row { grid-template-columns: 1fr; }
-            .package-grid { grid-template-columns: 1fr; }
-            .section { padding: 64px 0; }
-            .footer-inner, .footer-bottom { flex-direction: column; text-align: center; }
-            .footer-bottom { gap: 8px; }
-        }
-        @media (max-width: 480px) {
             .hero-actions { flex-direction: column; }
-            .btn { justify-content: center; }
+            .section { padding: 60px 0; }
+            .footer-inner { flex-direction: column; }
+            .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
         }
-
-        /* FILEMAIL */
-        .filemail-section { background: var(--color-bg); border-top: 1px solid var(--color-border); padding: 100px 0; }
-        .filemail-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-        .filemail-text .section-title { margin-bottom: 20px; }
-        .filemail-text > p { color: var(--color-text-muted); font-size: 1.05rem; margin-bottom: 32px; line-height: 1.7; }
-        .filemail-steps { display: flex; flex-direction: column; gap: 20px; margin-bottom: 36px; }
-        .filemail-step { display: flex; align-items: flex-start; gap: 16px; }
-        .filemail-step-num {
-            width: 36px; height: 36px; border-radius: 50%; background: var(--color-accent); color: #fff;
-            font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-        }
-        .filemail-step-text { padding-top: 6px; font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6; }
-        .filemail-step-text strong { color: var(--color-text); }
-        .btn-filemail {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: var(--color-accent); color: #fff;
-            padding: 14px 28px; border-radius: var(--radius-md); font-size: 0.95rem; font-weight: 600;
-            text-decoration: none; transition: all var(--transition);
-            box-shadow: 0 4px 16px rgba(0,174,239,0.25);
-        }
-        .btn-filemail:hover { background: var(--color-accent-hover); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,174,239,0.35); color: #fff; }
-        .filemail-visual { display: flex; flex-direction: column; gap: 16px; }
-        .filemail-card {
-            background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md);
-            padding: 20px 24px; transition: all var(--transition);
-        }
-        .filemail-card:hover { border-color: var(--color-accent); box-shadow: var(--shadow-sm); }
-        .filemail-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
-        .filemail-card-icon {
-            width: 38px; height: 38px; border-radius: var(--radius-sm);
-            background: var(--color-accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-        }
-        .filemail-card-title { font-weight: 600; font-size: 1rem; }
-        .filemail-card-desc { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; }
-        .filemail-note {
-            background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-sm);
-            padding: 14px 18px; font-size: 0.85rem; color: var(--color-text-muted); text-align: center;
-        }
-        @media (max-width: 768px) { .filemail-inner { grid-template-columns: 1fr; gap: 40px; } }
-
-        @keyframes spin { to { transform: rotate(360deg); } }
-        /* ============================================
-       KOMPAKT DESKTOP-LAYOUT (1024px+)
-        ============================================ */
         @media (min-width: 1024px) {
-          .section {
-            padding: 64px 0;
-          }
-
-          .hero {
-            min-height: 80vh;
-          }
-
-          .hero h1 {
-            font-size: clamp(2.2rem, 4.5vw, 3.2rem);
-            margin-bottom: 16px;
-          }
-
-          .hero p {
-            margin-bottom: 28px;
-          }
-
-          .hero-badge {
-            margin-bottom: 20px;
-          }
-
-          .section-subtitle {
-            margin-bottom: 32px;
-          }
-
-          .section-title {
-            margin-bottom: 10px;
-          }
+            .section { padding: 64px 0; }
+            .hero { min-height: 85vh; }
+            .hero h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAV -->
     <nav class="nav" id="navbar">
         <div class="container nav-inner">
-            <a href="#" class="nav-logo"><img src="logo.png" alt="Grevent"></a>
+            <a href="index.html" class="nav-logo"><img src="logo.png" alt="Grevent"></a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#om-oss">Om oss</a></li>
-                <li><a href="#utstyr">Utstyr</a></li>
-                <li><a href="#pakker">Pakkeløsninger</a></li>
-                <li><a href="#kontakt" class="nav-cta">Kontakt oss</a></li>
+                <li><a href="om-oss.html">Om oss</a></li>
+                <li><a href="utstyr.html">Utstyr</a></li>
+                <li><a href="pakker.html">Pakkeløsninger</a></li>
+                <li><a href="send-filer.html">Send filer</a></li>
+                <li><a href="kontakt.html" class="nav-cta">Kontakt oss</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Meny"><span></span><span></span><span></span></button>
         </div>
@@ -378,194 +164,83 @@
                 </h1>
                 <p id="hero-desc"></p>
                 <div class="hero-actions">
-                    <a href="#pakker" class="btn btn-primary">Se pakkeløsninger <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    <a href="#kontakt" class="btn btn-secondary">Ta kontakt</a>
+                    <a href="pakker.html" class="btn btn-primary">Se pakkeløsninger <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="kontakt.html" class="btn btn-secondary">Ta kontakt</a>
                 </div>
                 <div class="hero-stats" id="hero-stats"></div>
             </div>
         </div>
     </section>
 
-    <!-- OM OSS -->
-    <section class="about section" id="om-oss">
+    <!-- PREVIEW CARDS -->
+    <section class="preview-section section">
         <div class="container">
-            <div class="about-grid fade-up">
-                <div class="about-text">
-                    <div class="section-label">Om oss</div>
-                    <h2 class="section-title" id="about-title"></h2>
-                    <p id="about-p1"></p>
-                    <p id="about-p2"></p>
-                    <div class="about-features" id="about-features"></div>
-                </div>
-                <div>
-                    <div class="about-image" id="about-image-container"></div>
-                    <div class="team-grid" style="margin-top: 24px;" id="team-grid"></div>
-                </div>
+            <div class="fade-up" style="margin-bottom: 40px;">
+                <div class="section-label">Utforsk</div>
+                <h2 class="section-title">Alt du trenger på ett sted</h2>
+                <p class="section-subtitle">Vi leverer komplett teknisk produksjon — fra enkle presentasjoner til store konferanser.</p>
+            </div>
+            <div class="preview-grid">
+                <a href="om-oss.html" class="preview-card fade-up">
+                    <div class="preview-card-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Om oss</h3>
+                    <p>Lær mer om Grevent, teamet vårt og hva som gjør oss til den rette partneren for ditt arrangement.</p>
+                    <span class="preview-card-link">Les mer <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="utstyr.html" class="preview-card fade-up">
+                    <div class="preview-card-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Utstyr</h3>
+                    <p>Profesjonelt AV-utstyr vi eier selv — fra kompakte rigs til avanserte flerkamera-produksjoner.</p>
+                    <span class="preview-card-link">Se utstyr <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="pakker.html" class="preview-card fade-up">
+                    <div class="preview-card-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
+                    <h3>Pakkeløsninger</h3>
+                    <p>Ferdige pakker fra enkel konferanse til stor produksjon — eller skreddersydde løsninger.</p>
+                    <span class="preview-card-link">Se pakker <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="send-filer.html" class="preview-card fade-up">
+                    <div class="preview-card-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    </div>
+                    <h3>Send filer</h3>
+                    <p>Last opp presentasjoner, logoer og videoer til oss trygt og enkelt — uten e-postbegrensninger.</p>
+                    <span class="preview-card-link">Last opp <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
+                <a href="kontakt.html" class="preview-card fade-up">
+                    <div class="preview-card-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <h3>Kontakt oss</h3>
+                    <p>Fortell oss om ditt arrangement — vi kommer tilbake med et uforpliktende tilbud.</p>
+                    <span class="preview-card-link">Ta kontakt <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- UTSTYR -->
-    <section class="section" id="utstyr">
-        <div class="container">
-            <div class="fade-up">
-                <div class="section-label">Utstyr</div>
-                <h2 class="section-title" id="eq-title"></h2>
-                <p class="section-subtitle" id="eq-desc"></p>
-            </div>
-            <div class="equipment-grid" id="equipment-grid"></div>
-        </div>
-    </section>
-
-    <!-- PAKKER -->
-    <section class="packages section" id="pakker">
-        <div class="container">
-            <div class="fade-up">
-                <div class="section-label">Pakkeløsninger</div>
-                <h2 class="section-title" id="pkg-title"></h2>
-                <p class="section-subtitle" id="pkg-desc"></p>
-            </div>
-            <div class="package-grid" id="package-grid"></div>
-            <p style="text-align:center; color:var(--color-text-subtle); font-size:0.9rem; margin-top:40px;" class="fade-up" id="pkg-footer"></p>
-        </div>
-    </section>
-
-    <!-- FILEMAIL -->
-    <section class="filemail-section">
-        <div class="container">
-            <div class="filemail-inner fade-up">
-
-                <!-- Venstre: tekst og CTA -->
-                <div class="filemail-text">
-                    <div class="section-label">Send oss filer</div>
-                    <h2 class="section-title">Last opp materiell til ditt arrangement</h2>
-                    <p>Har du logoer, presentasjoner, videoer eller annet materiell vi trenger til arrangementet? Bruk vår filoverføring — trygt, enkelt og uten e-postbegrensninger.</p>
-
-                    <div class="filemail-steps">
-                        <div class="filemail-step">
-                            <div class="filemail-step-num">1</div>
-                            <div class="filemail-step-text">
-                                <strong>Klikk på knappen nedenfor</strong> for å åpne Grevent sin sikre opplastingsside
-                            </div>
-                        </div>
-                        <div class="filemail-step">
-                            <div class="filemail-step-num">2</div>
-                            <div class="filemail-step-text">
-                                <strong>Dra og slipp filene</strong> — logoer, presentasjoner, videoer, bakgrunnsbilder, alt du vil vi skal ha
-                            </div>
-                        </div>
-                        <div class="filemail-step">
-                            <div class="filemail-step-num">3</div>
-                            <div class="filemail-step-text">
-                                <strong>Skriv inn ditt navn og kontaktinfo</strong> så vet vi hvem filene tilhører
-                            </div>
-                        </div>
-                        <div class="filemail-step">
-                            <div class="filemail-step-num">4</div>
-                            <div class="filemail-step-text">
-                                <strong>Klikk send</strong> — vi mottar filene umiddelbart og bekrefter mottak
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="https://grevent.filemail.com/" target="_blank" rel="noopener" class="btn-filemail">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="17 8 12 3 7 8"/>
-                            <line x1="12" y1="3" x2="12" y2="15"/>
-                        </svg>
-                        Send filer til Grevent
-                    </a>
-                </div>
-
-                <!-- Høyre: visuelt kort-panel -->
-                <div class="filemail-visual">
-                    <div class="filemail-card">
-                        <div class="filemail-card-header">
-                            <div class="filemail-card-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
-                                    <rect x="2" y="3" width="20" height="14" rx="2"/>
-                                    <line x1="8" y1="21" x2="16" y2="21"/>
-                                    <line x1="12" y1="17" x2="12" y2="21"/>
-                                </svg>
-                            </div>
-                            <div class="filemail-card-title">Presentasjoner</div>
-                        </div>
-                        <div class="filemail-card-desc">PowerPoint, Keynote, PDF-slides, manus og talerpunkter</div>
-                    </div>
-
-                    <div class="filemail-card">
-                        <div class="filemail-card-header">
-                            <div class="filemail-card-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polygon points="10 8 16 12 10 16 10 8"/>
-                                </svg>
-                            </div>
-                            <div class="filemail-card-title">Video og media</div>
-                        </div>
-                        <div class="filemail-card-desc">Intro-videoer, breaks, bakgrunnsmusikk, jingles, reklamefilmer</div>
-                    </div>
-
-                    <div class="filemail-card">
-                        <div class="filemail-card-header">
-                            <div class="filemail-card-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
-                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                                    <path d="M21 15l-5-5L5 21"/>
-                                </svg>
-                            </div>
-                            <div class="filemail-card-title">Logoer og grafikk</div>
-                        </div>
-                        <div class="filemail-card-desc">Firmalogo, arrangementsgrafikk, scenebilder, bannere</div>
-                    </div>
-
-                    <div class="filemail-note">
-                        <strong>Støtter store filer</strong> · Trygt og kryptert · Ingen registrering nødvendig
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- KONTAKT -->
-    <section class="section" id="kontakt">
-        <div class="container">
-            <div class="fade-up">
-                <div class="section-label">Kontakt</div>
-                <h2 class="section-title" id="contact-title"></h2>
-                <p class="section-subtitle" id="contact-desc"></p>
-            </div>
-            <div class="contact-grid fade-up">
-                <div class="contact-info" id="contact-info"></div>
-                <form class="contact-form" onsubmit="handleSubmit(event)" id="contact-form">
-                    <div class="form-row">
-                        <div class="form-group"><label class="form-label" for="name">Navn</label><input class="form-input" type="text" id="name" placeholder="Ditt navn" required></div>
-                        <div class="form-group"><label class="form-label" for="company">Firma</label><input class="form-input" type="text" id="company" placeholder="Firmanavn"></div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group"><label class="form-label" for="email">E-post</label><input class="form-input" type="email" id="email" placeholder="din@epost.no" required></div>
-                        <div class="form-group"><label class="form-label" for="phone">Telefon</label><input class="form-input" type="tel" id="phone" placeholder="XXX XX XXX"></div>
-                    </div>
-                    <div class="form-group"><label class="form-label" for="package-select">Interessert i</label><select class="form-select" id="package-select"></select></div>
-                    <div class="form-group"><label class="form-label" for="message">Melding</label><textarea class="form-textarea" id="message" placeholder="Fortell oss om arrangementet ditt — dato, sted, antall deltakere, behov..." required></textarea></div>
-                    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send forespørsel <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
-                <div>
+                <div class="footer-brand">
                     <div class="footer-logo"><img src="logo.png" alt="Grevent"></div>
-                    <div class="footer-info" style="margin-top:8px;">Teknisk produksjon for konferanser og events</div>
+                    <div class="footer-tagline">Teknisk produksjon for konferanser og events</div>
                 </div>
-                <div class="footer-info" style="text-align:right;" id="footer-email"></div>
+                <div class="footer-nav-group">
+                    <h4>Sider</h4>
+                    <a href="om-oss.html">Om oss</a>
+                    <a href="utstyr.html">Utstyr</a>
+                    <a href="pakker.html">Pakkeløsninger</a>
+                    <a href="send-filer.html">Send filer</a>
+                    <a href="kontakt.html">Kontakt</a>
+                </div>
+                <div class="footer-contact" id="footer-contact"></div>
             </div>
             <div class="footer-bottom">
                 <span>&copy; 2015–2026 Grevent AS. Alle rettigheter reservert.</span>
@@ -575,173 +250,17 @@
     </footer>
 
     <script>
-    // SVG icons for equipment (fallback when no image)
-    const eqIcons = {
-        'Video': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>',
-        'Lyd': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>',
-        'Lys': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>',
-        'Streaming & presentasjon': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
-        'Regi & kontroll': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>',
-        'Rigg & infrastruktur': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>'
-    };
-
-    const featureIcons = [
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>',
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>'
-    ];
-
-    const contactIcons = {
-        epost: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>',
-        telefon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>',
-        lokasjon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
-        orgnr: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>'
-    };
-
-    const checkSvg = '<svg class="package-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>';
-
-    // Helper: ensure value is array (Decap CMS may save lists as strings)
-    function ensureArray(val) {
-        if (Array.isArray(val)) return val;
-        if (typeof val === 'string' && val.trim()) return val.split(',').map(s => s.trim());
-        return [];
-    }
-
-    // Load content and render
-    fetch('content/site.json')
-        .then(r => { if (!r.ok) throw new Error('Kunne ikke laste innhold: ' + r.status); return r.json(); })
-        .then(data => {
-            // Hero
-            try {
-                document.getElementById('hero-badge').textContent = data.hero.badge;
-                document.getElementById('hero-title1').textContent = data.hero.tittel_linje1;
-                document.getElementById('hero-title2').textContent = data.hero.tittel_linje2;
-                document.getElementById('hero-desc').textContent = data.hero.beskrivelse;
-                document.getElementById('hero-stats').innerHTML = `
-                    <div class="hero-stat"><div class="hero-stat-value">${data.hero.stat1_verdi}</div><div class="hero-stat-label">${data.hero.stat1_tekst}</div></div>
-                    <div class="hero-stat"><div class="hero-stat-value">${data.hero.stat2_verdi}</div><div class="hero-stat-label">${data.hero.stat2_tekst}</div></div>
-                    <div class="hero-stat"><div class="hero-stat-value">${data.hero.stat3_verdi}</div><div class="hero-stat-label">${data.hero.stat3_tekst}</div></div>
-                `;
-            } catch(e) { console.error('Feil i Hero-seksjon:', e); }
-
-            // About
-            try {
-                document.getElementById('about-title').textContent = data.om_oss.tittel;
-                document.getElementById('about-p1').textContent = data.om_oss.avsnitt1;
-                document.getElementById('about-p2').textContent = data.om_oss.avsnitt2;
-
-                const imgContainer = document.getElementById('about-image-container');
-                if (data.om_oss.bilde && data.om_oss.bilde !== 'bilder/arrangement.jpg') {
-                    imgContainer.innerHTML = `<img src="${data.om_oss.bilde}" alt="Grevent arrangement">`;
-                } else {
-                    imgContainer.innerHTML = '<div class="about-image-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Bilde fra arrangement</span></div>';
-                }
-
-                document.getElementById('about-features').innerHTML = ensureArray(data.om_oss.fordeler).map((f, i) => `
-                    <div class="about-feature">
-                        <div class="about-feature-icon">${featureIcons[i] || featureIcons[0]}</div>
-                        <div><h4>${f.tittel || ''}</h4><p>${f.beskrivelse || ''}</p></div>
-                    </div>
-                `).join('');
-
-                const colors = ['var(--color-accent), var(--color-accent-dark)', 'var(--color-accent-secondary), #78797b'];
-                document.getElementById('team-grid').innerHTML = ensureArray(data.om_oss.team).map((t, i) => `
-                    <div class="team-card">
-                        <div class="team-avatar" style="background: linear-gradient(135deg, ${colors[i] || colors[0]});">${t.initialer || ''}</div>
-                        <div class="team-name">${t.navn || ''}</div>
-                        <div class="team-role">${t.rolle || ''}</div>
-                    </div>
-                `).join('');
-            } catch(e) { console.error('Feil i Om oss-seksjon:', e); }
-
-            // Equipment
-            try {
-                document.getElementById('eq-title').textContent = data.utstyr.tittel;
-                document.getElementById('eq-desc').textContent = data.utstyr.beskrivelse;
-                const kategorier = ensureArray(data.utstyr.kategorier);
-                document.getElementById('equipment-grid').innerHTML = kategorier.map(eq => {
-                    const hasImage = eq.bilde && eq.bilde.trim() !== '';
-                    const imageContent = hasImage
-                        ? `<img src="${eq.bilde}" alt="${eq.tittel || ''}" onerror="this.parentElement.innerHTML='${(eqIcons[eq.kategori] || eqIcons['Video']).replace(/'/g, "\\'")}';">`
-                        : (eqIcons[eq.kategori] || eqIcons['Video']);
-                    const tags = ensureArray(eq.tags);
-                    return `
-                    <div class="eq-card fade-up">
-                        <div class="eq-card-image">${imageContent}</div>
-                        <div class="eq-card-body">
-                            <div class="eq-card-category">${eq.kategori || ''}</div>
-                            <h3>${eq.tittel || ''}</h3>
-                            <p>${eq.beskrivelse || ''}</p>
-                            <div class="eq-card-specs">${tags.map(t => `<span class="eq-spec-tag">${t}</span>`).join('')}</div>
-                        </div>
-                    </div>`;
-                }).join('');
-            } catch(e) { console.error('Feil i Utstyr-seksjon:', e); }
-
-            // Packages
-            try {
-                document.getElementById('pkg-title').textContent = data.pakker.tittel;
-                document.getElementById('pkg-desc').textContent = data.pakker.beskrivelse;
-                document.getElementById('pkg-footer').textContent = data.pakker.bunntekst;
-                const pakkeliste = ensureArray(data.pakker.liste);
-                document.getElementById('package-grid').innerHTML = pakkeliste.map(pkg => `
-                    <div class="package-card ${pkg.featured ? 'featured' : ''} fade-up">
-                        ${pkg.featured ? '<div class="package-badge">Mest populær</div>' : ''}
-                        <div class="package-name">${pkg.navn || ''}</div>
-                        <div class="package-desc">${pkg.beskrivelse || ''}</div>
-                        <div class="package-price">
-                            <div class="package-price-label">Fra</div>
-                            <div class="package-price-value">${pkg.pris || ''} <span class="package-price-unit">kr / dag</span></div>
-                        </div>
-                        <ul class="package-includes">${ensureArray(pkg.inkluderer).map(item => `<li>${checkSvg}${item}</li>`).join('')}</ul>
-                        <a href="#kontakt" class="btn ${pkg.featured ? 'btn-primary' : 'btn-secondary'}">Be om tilbud</a>
-                    </div>
-                `).join('');
-            } catch(e) { console.error('Feil i Pakker-seksjon:', e); }
-
-            // Contact
-            try {
-                document.getElementById('contact-title').textContent = data.kontakt.tittel;
-                document.getElementById('contact-desc').textContent = data.kontakt.beskrivelse;
-                document.getElementById('contact-info').innerHTML = `
-                    <h3>${data.kontakt.firmanavn}</h3>
-                    <p>${data.kontakt.intro}</p>
-                    <div class="contact-details">
-                        <div class="contact-item"><div class="contact-icon">${contactIcons.epost}</div><div><div class="contact-item-label">E-post</div><div class="contact-item-value"><a href="mailto:${data.kontakt.epost}">${data.kontakt.epost}</a></div></div></div>
-                        <div class="contact-item"><div class="contact-icon">${contactIcons.telefon}</div><div><div class="contact-item-label">Telefon</div><div class="contact-item-value"><a href="tel:${data.kontakt.telefon.replace(/\s/g,'')}">${data.kontakt.telefon}</a></div></div></div>
-                        <div class="contact-item"><div class="contact-icon">${contactIcons.lokasjon}</div><div><div class="contact-item-label">Lokasjon</div><div class="contact-item-value">${data.kontakt.lokasjon}</div></div></div>
-                        <div class="contact-item"><div class="contact-icon">${contactIcons.orgnr}</div><div><div class="contact-item-label">Org.nr</div><div class="contact-item-value">${data.kontakt.orgnr}</div></div></div>
-                    </div>
-                `;
-            } catch(e) { console.error('Feil i Kontakt-seksjon:', e); }
-
-            // Package select in form
-            try {
-                const sel = document.getElementById('package-select');
-                sel.innerHTML = '<option value="">Velg pakke (valgfritt)</option>' +
-                    ensureArray(data.pakker.liste).map(p => `<option value="${(p.navn || '').toLowerCase()}">${p.navn || ''}</option>`).join('') +
-                    '<option value="skreddersydd">Skreddersydd løsning</option>';
-            } catch(e) { console.error('Feil i pakke-velger:', e); }
-
-            // Footer
-            try {
-                document.getElementById('footer-email').innerHTML = `<a href="mailto:${data.kontakt.epost}">${data.kontakt.epost}</a>`;
-                document.getElementById('footer-orgnr').textContent = `Org.nr: ${data.kontakt.orgnr}`;
-            } catch(e) { console.error('Feil i footer:', e); }
-
-            // Re-init animations for dynamically added elements
-            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-        })
-        .catch(err => {
-            console.error('Feil ved lasting av innhold:', err);
-            document.body.innerHTML += '<div style="position:fixed;bottom:20px;left:20px;background:#ff4444;color:#fff;padding:12px 20px;border-radius:8px;font-size:14px;z-index:9999;">Kunne ikke laste innhold. Prøv å laste siden på nytt.</div>';
-        });
-
-    // Nav
+    // Nav toggle
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
     navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    // Active nav link
+    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    navLinks.querySelectorAll('a').forEach(link => {
+        if (link.getAttribute('href') === currentFile) link.classList.add('active');
+    });
 
     // Scroll animations
     const observer = new IntersectionObserver((entries) => {
@@ -749,58 +268,36 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // Navbar
+    // Navbar scroll
     window.addEventListener('scroll', () => {
         document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
     });
 
-    // Form
-    async function handleSubmit(e) {
-        e.preventDefault();
-        const form = e.target;
-        const btn = form.querySelector('button[type="submit"]');
-        const originalHTML = btn.innerHTML;
-
-        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="animation:spin 1s linear infinite"><path d="M21 12a9 9 0 1 1-6.22-8.56"/></svg> Sender...';
-        btn.disabled = true;
-        btn.style.opacity = '0.8';
-
-        const data = new FormData();
-        data.append('navn',    form.querySelector('#name').value);
-        data.append('firma',   form.querySelector('#company').value);
-        data.append('epost',   form.querySelector('#email').value);
-        data.append('telefon', form.querySelector('#phone').value);
-        data.append('pakke',   form.querySelector('#package-select').value);
-        data.append('melding', form.querySelector('#message').value);
-
-        try {
-            const res = await fetch('send.php', { method: 'POST', body: data });
-            const json = await res.json();
-
-            if (json.success) {
-                btn.innerHTML = '✓ ' + json.melding;
-                btn.style.background = '#22c997';
-                btn.style.opacity = '1';
-                form.reset();
-                setTimeout(() => {
-                    btn.innerHTML = originalHTML;
-                    btn.style.background = '';
-                    btn.disabled = false;
-                }, 5000);
-            } else {
-                throw new Error(json.melding || 'Ukjent feil');
-            }
-        } catch (err) {
-            btn.innerHTML = '✗ ' + (err.message || 'Noe gikk galt. Prøv igjen.');
-            btn.style.background = '#e53e3e';
-            btn.style.opacity = '1';
-            setTimeout(() => {
-                btn.innerHTML = originalHTML;
-                btn.style.background = '';
-                btn.disabled = false;
-            }, 4000);
-        }
-    }
+    // Content
+    fetch('content/site.json')
+        .then(r => r.json())
+        .then(data => {
+            // Hero
+            document.getElementById('hero-badge').textContent = data.hero.badge;
+            document.getElementById('hero-title1').textContent = data.hero.tittel_linje1;
+            document.getElementById('hero-title2').textContent = data.hero.tittel_linje2;
+            document.getElementById('hero-desc').textContent = data.hero.beskrivelse;
+            document.getElementById('hero-stats').innerHTML = `
+                <div class="hero-stat"><div class="hero-stat-value">${data.hero.stat1_verdi}</div><div class="hero-stat-label">${data.hero.stat1_tekst}</div></div>
+                <div class="hero-stat"><div class="hero-stat-value">${data.hero.stat2_verdi}</div><div class="hero-stat-label">${data.hero.stat2_tekst}</div></div>
+                <div class="hero-stat"><div class="hero-stat-value">${data.hero.stat3_verdi}</div><div class="hero-stat-label">${data.hero.stat3_tekst}</div></div>
+            `;
+            // Footer
+            document.getElementById('footer-contact').innerHTML = `
+                <a href="mailto:${data.kontakt.epost}">${data.kontakt.epost}</a><br>
+                <a href="tel:${data.kontakt.telefon.replace(/\s/g,'')}">${data.kontakt.telefon}</a><br>
+                ${data.kontakt.lokasjon}
+            `;
+            document.getElementById('footer-orgnr').textContent = `Org.nr: ${data.kontakt.orgnr}`;
+            // Re-observe new elements
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        })
+        .catch(err => console.error('Feil ved lasting av innhold:', err));
     </script>
 </body>
 </html>
