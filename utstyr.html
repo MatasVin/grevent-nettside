@@ -106,7 +106,31 @@
             .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
         }
         @media (min-width: 1024px) { .section { padding: 64px 0; } }
+
+        /* DARK MODE */
+        .theme-toggle { background: none; border: 1px solid var(--color-border); border-radius: var(--radius-sm); cursor: pointer; padding: 7px; display: flex; align-items: center; justify-content: center; color: var(--color-text-muted); transition: all var(--transition); margin-left: 4px; flex-shrink: 0; }
+        .theme-toggle:hover { border-color: var(--color-accent); color: var(--color-accent); background: var(--color-accent-glow); }
+        .icon-sun { display: none; }
+        .icon-moon { display: block; }
+        [data-theme="dark"] .icon-sun { display: block; }
+        [data-theme="dark"] .icon-moon { display: none; }
+        [data-theme="dark"] {
+            --color-bg: #0f1117;
+            --color-bg-elevated: #171b26;
+            --color-border: #252836;
+            --color-border-light: #2e3347;
+            --color-text: #e8e9ef;
+            --color-text-muted: #9899a6;
+            --color-text-subtle: #6b6c7a;
+        }
+        [data-theme="dark"] .nav { background: rgba(15,17,23,0.92); border-color: var(--color-border); }
+        [data-theme="dark"] .nav-links { background: rgba(15,17,23,0.98); }
+        [data-theme="dark"] .eq-card { background: var(--color-bg-elevated); }
+        [data-theme="dark"] .eq-card-image { background: linear-gradient(135deg, var(--color-bg-elevated) 0%, #1c2033 100%); }
+        [data-theme="dark"] .footer { background: #080b10; }
+        [data-theme="dark"] .page-header { background: var(--color-bg-elevated); }
     </style>
+    <script>(function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)})();</script>
 </head>
 <body>
 
@@ -120,7 +144,13 @@
                 <li><a href="send-filer.html">Send filer</a></li>
                 <li><a href="kontakt.html" class="nav-cta">Kontakt oss</a></li>
             </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="Meny"><span></span><span></span><span></span></button>
+            <div style="display:flex;align-items:center;gap:4px;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Bytt tema">
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Meny"><span></span><span></span><span></span></button>
+            </div>
         </div>
     </nav>
 
@@ -193,6 +223,12 @@
 
     window.addEventListener('scroll', () => {
         document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    document.getElementById('themeToggle').addEventListener('click', () => {
+        const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
     });
 
     fetch('content/site.json')
