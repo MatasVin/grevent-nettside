@@ -315,6 +315,39 @@
         @media (max-width: 768px) { .filemail-inner { grid-template-columns: 1fr; gap: 40px; } }
 
         @keyframes spin { to { transform: rotate(360deg); } }
+        /* ============================================
+       KOMPAKT DESKTOP-LAYOUT (1024px+)
+        ============================================ */
+        @media (min-width: 1024px) {
+          .section {
+            padding: 64px 0;
+          }
+
+          .hero {
+            min-height: 80vh;
+          }
+
+          .hero h1 {
+            font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+            margin-bottom: 16px;
+          }
+
+          .hero p {
+            margin-bottom: 28px;
+          }
+
+          .hero-badge {
+            margin-bottom: 20px;
+          }
+
+          .section-subtitle {
+            margin-bottom: 32px;
+          }
+
+          .section-title {
+            margin-bottom: 10px;
+          }
+        }
     </style>
 </head>
 <body>
