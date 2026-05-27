@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Konfigurasjon — endre disse ved behov
-$mottaker_epost = 'post@grevent.no';
+$mottaker_epost = 'matas@grevent.no';
 $mottaker_navn  = 'Grevent AS';
 $emne_prefix    = '[Grevent.no] Ny forespørsel: ';
 
