@@ -9,12 +9,12 @@
     "stat1_tekst": "Års erfaring innen underholdning og event",
     "stat2_tekst": "Gjennomførte produksjoner siden 2015",
     "stat3_tekst": "Alt på ett sted!",
-    "beskrivelse": "Grevent leverer lyd, lys, bilde og streaming til konferanser og events — med eget utstyr og erfarne teknikere. Kontakt oss, så finner vi løsningen som passer ditt budsjett og arrangement."
+    "beskrivelse": "Grevent leverer lyd, lys, bilde og streaming til konferanser og events med eget utstyr og erfarne teknikere. Kontakt oss, så finner vi løsningen som passer ditt budsjett og arrangement."
   },
   "om_oss": {
     "tittel": "Hybrid eventbyrå og teknisk leverandør",
     "avsnitt1": "Grevent AS ble grunnlagt i 2015 og kombinerer rollen som eventbyrå med teknisk leverandør. Det gir deg én kontaktperson og sømløst samarbeid fra planlegging til gjennomføring — tilpasset ditt budsjett og dine ønsker.",
-    "avsnitt2": "Med eget utstyrslager og erfarne frilans-teknikere leverer vi komplette AV-løsninger skreddersydd for ditt arrangement — så du kan fokusere på innholdet.",
+    "avsnitt2": "Med eget utstyrslager og erfarne frilans-teknikere leverer vi komplette AV-løsninger skreddersydd for ditt arrangement så du kan fokusere på innholdet.",
     "bilde": "/bilder/alle-2.jpg",
     "fordeler": [
       {
@@ -51,7 +51,7 @@
         "kategori": "AV-FLIGHT 1",
         "tittel": "MINSTEMANN",
         "beskrivelse": "Vår kompakte rigg for enkle konferanser. Roland XS-62S bildemikser, 3× Mac Mini M4 Pro og integrert 15\" monitor. Lett nok for kollektivtransport — perfekt for presentasjoner, video og nettsider uten kamerabehov.",
-        "bilde": "/bilder/3-minstemann-åpen-front-m-skjerm.jpg",
+        "bilde": "/bilder/3-minstemann-open-front-m-skjerm.jpg",
         "tags": ["Companion", "Tally", "Intercom"]
       },
       {
@@ -64,7 +64,7 @@
         "kategori": "AV-FLIGHT 3",
         "tittel": "STOREBROR",
         "beskrivelse": "Vår kraftigste rigg for store produksjoner. Blackmagic Atem Constellation 8K (40 input/24 output), Midas M32 Core lydmikser med Dante og full kontroll over flere skjermflater, rom og streamingsignaler simultant.",
-        "bilde": "/bilder/1-storebror-åpen-front.jpg"
+        "bilde": "/bilder/1-storebror-open-front.jpg"
       },
       {
         "kategori": "Video",
@@ -110,13 +110,13 @@
   },
   "pakker": {
     "tittel": "Velg pakken som passer ditt arrangement",
-    "beskrivelse": "Ferdige pakker for ulike behov — fra enkle presentasjoner til komplette flerkamera-produksjoner. Alle priser er veiledende eks. mva.",
+    "beskrivelse": "Ferdige pakker for ulike behov fra enkle presentasjoner til komplette flerkamera-produksjoner. Alle priser er veiledende eks. mva.",
     "bunntekst": "Trenger du noe annet? Vi skreddersyr gjerne en løsning tilpasset ditt arrangement.",
     "liste": [
       {
         "navn": "Mini",
         "beskrivelse": "Enkel konferanse med presentasjon og grunnleggende lyd. Perfekt for møter og mindre samlinger.",
-        "pris": "15 000",
+        "pris": "999 000",
         "featured": false,
         "inkluderer": [
           "Lydanlegg med trådløse mikrofoner",
@@ -127,30 +127,30 @@
       },
       {
         "navn": "Konferanse",
-        "beskrivelse": "Komplett konferanseproduksjon med flerkamera, lyd, lys og streaming. Vårt mest valgte oppsett.",
-        "pris": "35 000",
+        "beskrivelse": "Komplett konferanseproduksjon med opptak, lyd og lys. Vårt mest valgte oppsett.",
+        "pris": "999 000",
         "featured": true,
         "inkluderer": [
-          "2–3 kameraer (PTZ / operatør)",
+          "1 kamera",
           "Komplett lydanlegg",
           "Scenelys",
           "Livestreaming",
           "LED-skjerm eller projektor",
-          "2 teknikere + regibord"
+          "2 teknikere"
         ]
       },
       {
         "navn": "Storproduksjon",
-        "beskrivelse": "Avansert produksjon for større konferanser med full regi, flere scener og dedikert team.",
-        "pris": "65 000",
+        "beskrivelse": "Avansert produksjon for større konferanser med full regi og livestreaming.",
+        "pris": "999 000",
         "featured": false,
         "inkluderer": [
-          "4+ kameraer med operatører",
+          "3 kameraer",
           "Komplett lyd med monitor",
           "Full lysdesign",
           "Livestreaming med grafikk",
           "Flere LED-skjermer",
-          "3+ teknikere, produsent og regi"
+          "3 teknikere, produsent og regi"
         ]
       }
     ]
