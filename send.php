@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Konfigurasjon — endre disse ved behov
-$mottaker_epost = 'matas.vin@gmail.com';
+$mottaker_epost = 'post@grevent.no';
 $mottaker_navn  = 'Grevent AS';
 $emne_prefix    = '[Grevent.no] Ny forespørsel: ';
 
@@ -100,7 +100,7 @@ if ($sendt) {
     $bekr_emne   = 'Takk for henvendelsen, ' . $navn . '!';
     $bekr_tekst  = "Hei $navn,\n\nTakk for at du tok kontakt med Grevent AS.\n";
     $bekr_tekst .= "Vi har mottatt din forespørsel og tar kontakt så snart som mulig.\n\n";
-    $bekr_tekst .= "Ha en flott dag!\nGrevent AS\npost@grevent.no";
+    $bekr_tekst .= "Ha en fin dag videre!\nGrevent AS\npost@grevent.no";
 
     $bekr_headers  = "From: \"Grevent AS\" <post@grevent.no>\r\n";
     $bekr_headers .= "Reply-To: post@grevent.no\r\n";
