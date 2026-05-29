@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Konfigurasjon — endre disse ved behov
-$mottaker_epost = 'post@grevent.no';
+$mottaker_epost = 'matas.vin@gmail.com';
 $mottaker_navn  = 'Grevent AS';
 $emne_prefix    = '[Grevent.no] Ny forespørsel: ';
 
@@ -59,44 +59,13 @@ $body .= "\n" . str_repeat('=', 40) . "\n";
 $body .= "Sendt: " . date('d.m.Y H:i') . "\n";
 $body .= "\n(Svar på denne e-posten går direkte til $epost)\n";
 
-// Bygg HTML-versjon av e-posten
-$html  = '<!DOCTYPE html><html><head><meta charset="UTF-8">';
-$html .= '<style>body{font-family:Arial,sans-serif;color:#333;max-width:600px;margin:0 auto;}';
-$html .= 'h2{color:#00AEEF;border-bottom:2px solid #00AEEF;padding-bottom:8px;}';
-$html .= '.felt{margin:12px 0;} .etikett{font-weight:bold;color:#58595B;font-size:13px;text-transform:uppercase;letter-spacing:1px;}';
-$html .= '.verdi{margin-top:4px;font-size:15px;} .melding-boks{background:#f7f8fa;border-left:3px solid #00AEEF;padding:12px 16px;margin-top:8px;border-radius:0 4px 4px 0;}';
-$html .= '.footer{margin-top:32px;font-size:12px;color:#999;border-top:1px solid #eee;padding-top:16px;}';
-$html .= '</style></head><body>';
-$html .= '<h2>Ny forespørsel via grevent.no</h2>';
-$html .= '<div class="felt"><div class="etikett">Navn</div><div class="verdi">' . $navn . '</div></div>';
-if ($firma)   $html .= '<div class="felt"><div class="etikett">Firma</div><div class="verdi">' . $firma . '</div></div>';
-$html .= '<div class="felt"><div class="etikett">E-post</div><div class="verdi"><a href="mailto:' . $epost . '">' . $epost . '</a></div></div>';
-if ($telefon) $html .= '<div class="felt"><div class="etikett">Telefon</div><div class="verdi">' . $telefon . '</div></div>';
-if ($pakke)   $html .= '<div class="felt"><div class="etikett">Interessert i</div><div class="verdi">' . $pakke . '</div></div>';
-$html .= '<div class="felt"><div class="etikett">Melding</div><div class="melding-boks">' . nl2br($melding) . '</div></div>';
-$html .= '<div class="footer">Sendt ' . date('d.m.Y \k\l. H:i') . ' fra grevent.no &mdash; svar g&aring;r til <a href="mailto:' . $epost . '">' . $epost . '</a></div>';
-$html .= '</body></html>';
 
-// Bygg MIME-e-post (plain text + HTML)
-$boundary = '----=_Part_' . uniqid();
-
+// Send enkel klartekst-e-post (unngår spamfiltre)
 $headers  = "From: \"Grevent Kontaktskjema\" <{$fra_epost}>\r\n";
 $headers .= "Reply-To: \"$navn\" <$epost>\r\n";
-$headers .= "To: \"$mottaker_navn\" <$mottaker_epost>\r\n";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-Type: multipart/alternative; boundary=\"$boundary\"\r\n";
-$headers .= "X-Mailer: Grevent-Nettside/1.0\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-$mime  = "--$boundary\r\n";
-$mime .= "Content-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n\r\n";
-$mime .= $body . "\r\n";
-$mime .= "--$boundary\r\n";
-$mime .= "Content-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n\r\n";
-$mime .= $html . "\r\n";
-$mime .= "--$boundary--";
-
-// Send e-post
-$sendt = mail($mottaker_epost, $emne, $mime, $headers);
+$sendt = mail($mottaker_epost, $emne, $body, $headers);
 
 if (!$sendt) {
     error_log('[Grevent] mail() feilet for forespørsel fra ' . $epost . ' — ' . date('c'));

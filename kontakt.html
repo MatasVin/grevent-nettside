@@ -41,8 +41,11 @@
         .section-label { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500; color: var(--color-accent); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
         .section-title { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
 
+        /* DEV BANNER */
+        .dev-banner { position: sticky; top: 0; z-index: 1001; height: 36px; background: #f5a623; color: #1a1a1a; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600; padding: 0 16px; gap: 8px; }
+
         /* NAV */
-        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--color-border); transition: var(--transition); }
+        .nav { position: fixed; top: 36px; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--color-border); transition: var(--transition); }
         .nav.scrolled { box-shadow: var(--shadow-sm); }
         .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
         .nav-logo img { height: 36px; width: auto; }
@@ -143,6 +146,11 @@
     <script>(function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)})();</script>
 </head>
 <body>
+
+    <div class="dev-banner">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Nettsiden er under utvikling — innhold kan endres
+    </div>
 
     <nav class="nav" id="navbar">
         <div class="container nav-inner">
@@ -265,8 +273,6 @@
                 <h3>${data.kontakt.firmanavn}</h3>
                 <p>${data.kontakt.intro}</p>
                 <div class="contact-details">
-                    <div class="contact-item"><div class="contact-icon">${contactIcons.epost}</div><div><div class="contact-item-label">E-post</div><div class="contact-item-value"><a href="mailto:${data.kontakt.epost}">${data.kontakt.epost}</a></div></div></div>
-                    <div class="contact-item"><div class="contact-icon">${contactIcons.telefon}</div><div><div class="contact-item-label">Telefon</div><div class="contact-item-value"><a href="tel:${data.kontakt.telefon.replace(/\s/g,'')}">${data.kontakt.telefon}</a></div></div></div>
                     <div class="contact-item"><div class="contact-icon">${contactIcons.lokasjon}</div><div><div class="contact-item-label">Lokasjon</div><div class="contact-item-value">${data.kontakt.lokasjon}</div></div></div>
                     <div class="contact-item"><div class="contact-icon">${contactIcons.orgnr}</div><div><div class="contact-item-label">Org.nr</div><div class="contact-item-value">${data.kontakt.orgnr}</div></div></div>
                 </div>
@@ -277,11 +283,7 @@
                 ensureArray(data.pakker.liste).map(p => `<option value="${(p.navn || '').toLowerCase()}">${p.navn || ''}</option>`).join('') +
                 '<option value="skreddersydd">Skreddersydd løsning</option>';
 
-            document.getElementById('footer-contact').innerHTML = `
-                <a href="mailto:${data.kontakt.epost}">${data.kontakt.epost}</a><br>
-                <a href="tel:${data.kontakt.telefon.replace(/\s/g,'')}">${data.kontakt.telefon}</a><br>
-                ${data.kontakt.lokasjon}
-            `;
+            document.getElementById('footer-contact').innerHTML = data.kontakt.lokasjon;
             document.getElementById('footer-orgnr').textContent = `Org.nr: ${data.kontakt.orgnr}`;
         })
         .catch(err => console.error('Feil:', err));
