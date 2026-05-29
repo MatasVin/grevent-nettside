@@ -13,7 +13,7 @@
   },
   "om_oss": {
     "tittel": "Hybrid eventbyrå og teknisk leverandør",
-    "avsnitt1": "Grevent AS ble grunnlagt i 2015 og kombinerer rollen som eventbyrå med teknisk leverandør. Det gir deg én kontaktperson og sømløst samarbeid fra planlegging til gjennomføring — tilpasset ditt budsjett og dine ønsker.",
+    "avsnitt1": "Grevent AS ble grunnlagt i 2015 og kombinerer rollen som eventbyrå med teknisk leverandør. Det gir deg én kontaktperson og sømløst samarbeid fra planlegging til gjennomføring tilpasset ditt budsjett og dine ønsker.",
     "avsnitt2": "Med eget utstyrslager og erfarne frilans-teknikere leverer vi komplette AV-løsninger skreddersydd for ditt arrangement så du kan fokusere på innholdet.",
     "bilde": "/bilder/alle-2.jpg",
     "fordeler": [
@@ -50,7 +50,7 @@
       {
         "kategori": "AV-FLIGHT 1",
         "tittel": "MINSTEMANN",
-        "beskrivelse": "Vår kompakte rigg for enkle konferanser. Roland XS-62S bildemikser, 3× Mac Mini M4 Pro og integrert 15\" monitor. Lett nok for kollektivtransport — perfekt for presentasjoner, video og nettsider uten kamerabehov.",
+        "beskrivelse": "Vår kompakte rigg for enkle konferanser. Roland XS-62S bildemikser, 3× Mac Mini M4 Pro og integrert 15\" monitor. Lett nok for kollektivtransport, perfekt for presentasjoner, video og nettsider uten kamerabehov.",
         "bilde": "/bilder/3-minstemann-open-front-m-skjerm.jpg"
       },
       {
@@ -68,13 +68,13 @@
       {
         "kategori": "Video",
         "tittel": "Kameraer",
-        "beskrivelse": "4× Canon CR-N500 PTZ i flightcase og 2× OBSbot Tail 2 — dekker alt fra enkle Q&A-opptak til avanserte flerkamera-produksjoner. Styres via Skaarhoj PTZ Pro eller fjernkontroll/WiFi.",
+        "beskrivelse": "4× Canon CR-N500 PTZ i flightcase og 2× OBSbot Tail 2, dekker alt fra enkle Q&A-opptak til avanserte flerkamera-produksjoner. Styres via Skaarhoj PTZ Pro eller fjernkontroll/WiFi.",
         "bilde": "/bilder/untitled-2.png"
       },
       {
         "kategori": "Video",
         "tittel": "Skjermer",
-        "beskrivelse": "Fra 21\" monitorer til 82\" Samsung 8K storskjerm i elektrisk heiskasse. Vi har Maxhub 4K skjermer i flere størrelser (43\"–65\"), preview-monitorer og proff SDI/HDMI-monitorer — alt i flightcase.",
+        "beskrivelse": "Fra 21\" monitorer til 82\" Samsung 8K storskjerm i elektrisk heiskasse. Vi har Maxhub 4K skjermer i flere størrelser (43\"–65\"), preview-monitorer og proff SDI/HDMI-monitorer, alt i flightcase.",
         "bilde": "/bilder/img_4042.jpg"
       },
       {
@@ -92,13 +92,13 @@
       {
         "kategori": "Lyd",
         "tittel": "Trådløse mikrofoner",
-        "beskrivelse": "Sennheiser EW-DX system med 8 kanaler — 2 quad Dante-mottakere, 8 beltpacks og 2 håndholdte mikrofoner. Utvides til 12 kanaler sommeren 2026.",
+        "beskrivelse": "Sennheiser EW-DX system med 8 kanaler, 2 quad Dante-mottakere, 8 beltpacks og 2 håndholdte mikrofoner. Utvides til 12 kanaler sommeren 2026.",
         "bilde": "bilder/utstyr-rigg.jpg"
       },
       {
         "kategori": "Lys",
         "tittel": "Scenelys og effektbelysning",
-        "beskrivelse": "8× Astera Quikspot — batteridrevne LED-spots perfekt som frontlys eller uplights. Trådløs styring og opptil 20 timers batteritid. Supplert med enkelt partylys for DJ-oppsett.",
+        "beskrivelse": "8× Astera Quikspot, batteridrevne LED-spots perfekt som frontlys eller uplights. Trådløs styring og opptil 20 timers batteritid. Supplert med enkelt partylys for DJ-oppsett.",
         "bilde": "bilder/utstyr-lys.jpg"
       }
     ]
@@ -152,8 +152,8 @@
     "beskrivelse": "Send oss en forespørsel, så tar vi kontakt innen kort tid med et uforpliktende tilbud.",
     "firmanavn": "Grevent AS",
     "intro": "Vi hjelper deg gjerne med planlegging og gjennomføring av teknisk produksjon for ditt neste arrangement.",
-    "epost": "post@grevent.no",
-    "telefon": "+47 958 34 919",
+    "epost": "",
+    "telefon": "",
     "lokasjon": "Nesodden, Norge",
     "orgnr": "915 347 681"
   }
