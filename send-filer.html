@@ -266,11 +266,7 @@
     fetch('content/site.json')
         .then(r => r.json())
         .then(data => {
-            document.getElementById('footer-contact').innerHTML = `
-                <a href="mailto:${data.kontakt.epost}">${data.kontakt.epost}</a><br>
-                <a href="tel:${data.kontakt.telefon.replace(/\s/g,'')}">${data.kontakt.telefon}</a><br>
-                ${data.kontakt.lokasjon}
-            `;
+            document.getElementById('footer-contact').innerHTML = data.kontakt.lokasjon;
             document.getElementById('footer-orgnr').textContent = `Org.nr: ${data.kontakt.orgnr}`;
         })
         .catch(err => console.error('Feil:', err));
