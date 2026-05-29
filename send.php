@@ -18,6 +18,11 @@ $mottaker_epost = 'post@grevent.no';
 $mottaker_navn  = 'Grevent AS';
 $emne_prefix    = '[Grevent.no] Ny forespørsel: ';
 
+// Fra-adresse: bruk serverens eget domene for å unngå SPF-avvisning.
+// Reply-To settes til avsenderen slik at du kan svare direkte.
+$server_domain = $_SERVER['SERVER_NAME'] ?? 'grevent.no';
+$fra_epost     = 'noreply@' . $server_domain;
+
 // Hjelper: rens inndata
 function rens(string $verdi): string {
     return htmlspecialchars(strip_tags(trim($verdi)), ENT_QUOTES, 'UTF-8');
@@ -52,6 +57,7 @@ if ($pakke)   $body .= "Pakke:    $pakke\n";
 $body .= "\nMelding:\n" . str_repeat('-', 30) . "\n$melding\n";
 $body .= "\n" . str_repeat('=', 40) . "\n";
 $body .= "Sendt: " . date('d.m.Y H:i') . "\n";
+$body .= "\n(Svar på denne e-posten går direkte til $epost)\n";
 
 // Bygg HTML-versjon av e-posten
 $html  = '<!DOCTYPE html><html><head><meta charset="UTF-8">';
@@ -68,13 +74,13 @@ $html .= '<div class="felt"><div class="etikett">E-post</div><div class="verdi">
 if ($telefon) $html .= '<div class="felt"><div class="etikett">Telefon</div><div class="verdi">' . $telefon . '</div></div>';
 if ($pakke)   $html .= '<div class="felt"><div class="etikett">Interessert i</div><div class="verdi">' . $pakke . '</div></div>';
 $html .= '<div class="felt"><div class="etikett">Melding</div><div class="melding-boks">' . nl2br($melding) . '</div></div>';
-$html .= '<div class="footer">Sendt ' . date('d.m.Y \k\l. H:i') . ' fra grevent.no</div>';
+$html .= '<div class="footer">Sendt ' . date('d.m.Y \k\l. H:i') . ' fra grevent.no &mdash; svar g&aring;r til <a href="mailto:' . $epost . '">' . $epost . '</a></div>';
 $html .= '</body></html>';
 
 // Bygg MIME-e-post (plain text + HTML)
 $boundary = '----=_Part_' . uniqid();
 
-$headers  = "From: \"Grevent Kontaktskjema\" <post@grevent.no>\r\n";
+$headers  = "From: \"Grevent Kontaktskjema\" <{$fra_epost}>\r\n";
 $headers .= "Reply-To: \"$navn\" <$epost>\r\n";
 $headers .= "To: \"$mottaker_navn\" <$mottaker_epost>\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
@@ -92,6 +98,10 @@ $mime .= "--$boundary--";
 // Send e-post
 $sendt = mail($mottaker_epost, $emne, $mime, $headers);
 
+if (!$sendt) {
+    error_log('[Grevent] mail() feilet for forespørsel fra ' . $epost . ' — ' . date('c'));
+}
+
 // Svar til klienten
 header('Content-Type: application/json; charset=UTF-8');
 
@@ -102,7 +112,7 @@ if ($sendt) {
     $bekr_tekst .= "Vi har mottatt din forespørsel og tar kontakt så snart som mulig.\n\n";
     $bekr_tekst .= "Ha en fin dag videre!\nGrevent AS\npost@grevent.no";
 
-    $bekr_headers  = "From: \"Grevent AS\" <post@grevent.no>\r\n";
+    $bekr_headers  = "From: \"Grevent AS\" <{$fra_epost}>\r\n";
     $bekr_headers .= "Reply-To: post@grevent.no\r\n";
     $bekr_headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
@@ -111,5 +121,5 @@ if ($sendt) {
     echo json_encode(['success' => true, 'melding' => 'Takk! Vi tar kontakt snart.']);
 } else {
     http_response_code(500);
-    echo json_encode(['success' => false, 'melding' => 'Noe gikk galt. Ring oss på +47 XXX XX XXX.']);
+    echo json_encode(['success' => false, 'melding' => 'Noe gikk galt. Send oss en e-post på post@grevent.no.']);
 }
