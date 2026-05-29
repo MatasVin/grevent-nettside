@@ -9,12 +9,12 @@
     "stat1_tekst": "Års erfaring innen underholdning og event",
     "stat2_tekst": "Gjennomførte produksjoner siden 2015",
     "stat3_tekst": "Alt på ett sted!",
-    "beskrivelse": "Grevent leverer komplett teknisk produksjon for små og mellomstore konferanser og eventer — lyd, lys, bilde og streaming med topp utstyr og erfarne teknikere. Vi har utstyr til enhver anledning og budsjett. Kontakt oss så hjelper vi deg med det du trenger - verken mer eller mindre!"
+    "beskrivelse": "Grevent leverer lyd, lys, bilde og streaming til konferanser og events med eget utstyr og erfarne teknikere. Kontakt oss, så finner vi løsningen som passer ditt budsjett og arrangement."
   },
   "om_oss": {
     "tittel": "Hybrid eventbyrå og teknisk leverandør",
-    "avsnitt1": "Grevent AS ble grunnlagt i 2015 og har siden den gang utviklet seg til å bli en pålitelig partner for teknisk produksjon av konferanser og events. Vi kombinerer rollen som eventbyrå med teknisk leverandør — noe som gir deg én kontaktperson og et sømløst samarbeid fra planlegging til gjennomføring. Vi stiller med det utstyret som faktisk trengs til jobben, og tilpasser oss kundens budsjett, forventninger og ønsker. ",
-    "avsnitt2": "Med eget utstyrslager og et nettverk av erfarne frilans-teknikere i tillegg til våre egne, leverer vi komplette AV-løsninger skreddersydd for ditt arrangement. Vi tar ansvar for hele den tekniske produksjonen, slik at du kan fokusere på innholdet.",
+    "avsnitt1": "Grevent AS ble grunnlagt i 2015 og kombinerer rollen som eventbyrå med teknisk leverandør. Det gir deg én kontaktperson og sømløst samarbeid fra planlegging til gjennomføring — tilpasset ditt budsjett og dine ønsker.",
+    "avsnitt2": "Med eget utstyrslager og erfarne frilans-teknikere leverer vi komplette AV-løsninger skreddersydd for ditt arrangement så du kan fokusere på innholdet.",
     "bilde": "/bilder/alle-2.jpg",
     "fordeler": [
       {
@@ -50,132 +50,99 @@
       {
         "kategori": "AV-FLIGHT 1",
         "tittel": "MINSTEMANN",
-        "beskrivelse": "Det yngste av våre digitale barn:<br>\n<br>\n- Roland XS-62S 6-kanals bildemikser<br>\n- 3 stk. Apple Mac Mini M4 pro<br>\n- Integrert 15\" pull-out monitor<br>\n- Perfect Cue mini presentasjonsclicker m/2 håndsett<br>\n- KVM-switch, Streamdeck XL etc.<br>\n- 2 HDMI og 2 SDI output<br>\n<br>\nPasser perfekt til relativt enkle konferanser, håndterer alt av presentasjoner, video, nettsider etc. 2 output fra maskin 1 og 2 til presentasjoner og preview, 1 ledig input for sceneretur etc. Trille-koffert som er lett nok til å kunne fraktes på kollektivtransport.<br>\n<br>\nBegrensninger: Få muligheter til lagvis distribusjon av content (bilde-i-bilde, timer på forskjellige lag etc.), ikke tilpasset kameraproduksjon/streaming, begrensede audio-muligheter. ",
-        "bilde": "/bilder/3-minstemann-åpen-front-m-skjerm.jpg",
-        "tags": [
-          "Companion",
-          "Tally",
-          "Intercom"
-        ]
+        "beskrivelse": "Vår kompakte rigg for enkle konferanser. Roland XS-62S bildemikser, 3× Mac Mini M4 Pro og integrert 15\" monitor. Lett nok for kollektivtransport — perfekt for presentasjoner, video og nettsider uten kamerabehov.",
+        "bilde": "/bilder/3-minstemann-open-front-m-skjerm.jpg"
       },
       {
         "kategori": "AV-FLIGHT 2",
         "tittel": "LILLEBROR",
-        "beskrivelse": "Det mellomste digitale barnet, tenåringen som kan nesten alt, og tror den er mye tøffere enn den er. Men et fantastisk verktøy som løser det aller meste. \n\nRoland VR-120HD AV-mikser\n2 stk. Fort Beach 11th gen Intel NUC i5 PC\n2 stk. Apple Mac Mini M4 pro\nASUS EBG19 ExpertWIFI PoE router m/wifi antenne\nStreamdeck Studio\nOmnicon Solo Companion Pi m/Streamdeck XL\nMicrocue 2 presentasjonsclicker m/2 håndsett\n3 HDMI og 2 SDI outputs\n\nEn avansert AV-mikser som også kan styre inntil 6 mikrofoner, avansert audio-routing, lagvis bygging av innhold med store muligheter for tilpasninger. Integrert streaming-encoder, mulighet for tilkobling av 2 eksterne maskiner via SDI/HDMI i tillegg til 4 kameraer. \n\nBegrensninger: Kun 1 multiview, tungvint å jobbe flere teknikere på samme rigg ved flerkameraproduksjon etc.\n",
+        "beskrivelse": "Mellomstore konferanser og livestreaming. Roland VR-120HD AV-mikser med inntil 6 mikrofoner, avansert audio-routing, 2× Mac Mini M4 Pro og innebygd streaming-encoder. Støtter 4 kameraer og 2 eksterne maskiner.",
         "bilde": "/bilder/2-lillebror-front.jpg"
       },
       {
         "kategori": "AV-FLIGHT 3",
         "tittel": "STOREBROR",
-        "beskrivelse": "Det største digitale barnet\n\nBlackmagic Atem Constellation 8K\n4 individuelle M/E lag\n40 input / 24 output\nMidas M32 Core lydmikser m/Dante-kort\n4 stk. Apple Mac Mini M2 Pro m/Dante virtual soundcard\n2 stk. Fort Beach 11th gen Intel NUC i5 PC  m/Dante virtual soundcard\n2 stk. Micro-PC Intel Celeron m/Dante virtual soundcard\n8-kanals TEsmart KVM-switch\nOmnicon companion Pi ( 1stk. dual v2, 1 stk. Mono, 1 stk. Plus)\n\nOptional Controller flight:\nBlackmagic 1 M/E Advanced Panel\nHyperdeck Studio HD Pro SSD/SD recorder\nSmartview 4K\nSmartview Duo\nSmartview Scope\n\nDette oppsettet kan brukes med kun AV-flight til avansert konferanseproduksjon, der det f.eks. trengs forskjellig innhold på flere flater (sideskjermer, side-rom, live/stream/record etc.). I tillegg kan control-flight benyttes for bedre kontroll over flatene, og til kameraproduksjon/streaming. \nBegrensninger: 1080p opptak/produksjon, men kombineres med større scalere ved behov (bruk av LED-vegg o.l.). \n\n",
-        "bilde": "/bilder/1-storebror-åpen-front.jpg"
+        "beskrivelse": "Vår kraftigste rigg for store produksjoner. Blackmagic Atem Constellation 8K (40 input/24 output), Midas M32 Core lydmikser med Dante og full kontroll over flere skjermflater, rom og streamingsignaler simultant.",
+        "bilde": "/bilder/1-storebror-open-front.jpg"
       },
       {
         "kategori": "Video",
         "tittel": "Kameraer",
-        "beskrivelse": "Vi eier følgende PTZ kameraer: \n\n4 stk. Canon CR-N500 i flightcase med stativer, tromler etc.\n2 stk. OBSbot Tail 2\n\nCanon brukes til de litt større flerkamera-produksjonene, sammen med vår Skaarhoj PTZ Pro kontroller. OBSbot kameraene er 4K, batteridrevne, og kan styres med fjernkontroll eller over WIFI/kablet nettverk og brukes blant annet til enkle opptak, enklere 2-kamera produksjoner eller som publikums-kamera under Q&A o.l. Disse kameraene løser de aller fleste produksjonene vi gjør, men kan i enkelte tilfeller suppleres med statiske Canon-kameraer ved behov for ennå flere vinkler.",
-        "bilde": "/bilder/untitled-2.png",
-        "tags": [
-          "PTZ-kameraer",
-          "videoproduksjon",
-          "streaming"
-        ]
+        "beskrivelse": "4× Canon CR-N500 PTZ i flightcase og 2× OBSbot Tail 2 — dekker alt fra enkle Q&A-opptak til avanserte flerkamera-produksjoner. Styres via Skaarhoj PTZ Pro eller fjernkontroll/WiFi.",
+        "bilde": "/bilder/untitled-2.png"
       },
       {
         "kategori": "Video",
         "tittel": "Skjermer",
-        "beskrivelse": "1 stk. 82\" Samsung 8K skjerm i elektrisk heis-kasse (4000 nits lysstyrke)\n2 stk. 65\" Maxhub 4K skjerm i flightcase (500 nits lysstyrke)\n2 stk. 55\" Maxhub 4K skjerm i flightcase (800 nits lysstyrke)\n2 stk. 43\" Maxhub preview-skjerm m/brakett i transportbager\n1 stk. 32\" Viewsonic preview-skjerm i flightcase med vinkel-stativ\n1 stk. 28\" Lilliput HDMI/SDI proff-monitor i flightcase \n2 stk. 21\" Lilliput HDMI/SDI proff-monitorer i flightcase\nDiverse mindre skjermer/monitorer 7\"-21\"\n\nVår 82\" storskjerm passer perfekt på messe-stand, med bord for brosjyrer e.l. i front. Den kan også kles på 3 sider med spesialtilpasset banner. Ta kontakt for mer info! ",
-        "bilde": "/bilder/img_4042.jpg",
-        "tags": [
-          "Skjerm",
-          "monitor",
-          "storskjerm",
-          "påsyn"
-        ]
+        "beskrivelse": "Fra 21\" monitorer til 82\" Samsung 8K storskjerm i elektrisk heiskasse. Vi har Maxhub 4K skjermer i flere størrelser (43\"–65\"), preview-monitorer og proff SDI/HDMI-monitorer — alt i flightcase.",
+        "bilde": "/bilder/img_4042.jpg"
       },
       {
         "kategori": "Lyd",
         "tittel": "Høyttalere",
-        "beskrivelse": "2 stk. JBL PRX812 12\" topp\n2 stk. JBL PRX915 15\" topp\n2 stk. JBL PRX918 18\" sub\n2 stk. JBL PRX ONE søyler m/12\" sub og integrert mikser i flightcase\n2 stk. Bose S1 Pro+ (batteridrevne)\n1 stk. Soundboks 3 (batteridreven)\n",
-        "bilde": "bilder/utstyr-lyd.jpg",
-        "tags": [
-          "PA-system",
-          "høyttalere",
-          "lydanlegg"
-        ]
+        "beskrivelse": "JBL PRO-serie topp og sub (12\"/15\"/18\"), JBL PRO ONE søylesystem med integrert mikser, og batteridrevne Bose S1 Pro+ og Soundboks 3 for oppsett uten strømtilgang.",
+        "bilde": "bilder/JBL.jpg"
       },
       {
         "kategori": "Lyd",
         "tittel": "Lydmiksere",
-        "beskrivelse": "Behringer Wing Compact\nAllen & Heath CQ18T\nSoundcraft Signature 10\n\nVi har også følgende stageboxer til vår Behringer mikser:\nMidas DL16 16/8 stagebox\nBehringer SD8 8/8 stagebox\nMidas DN4888 8/8 Stageconnect box\n",
-        "bilde": "bilder/utstyr-rigg.jpg",
-        "tags": [
-          "Truss",
-          "Stativer",
-          "Kabling"
-        ]
+        "beskrivelse": "Behringer Wing Compact, Allen & Heath CQ18T og Soundcraft Signature 10, med stagebox-utvalg for fleksibel sceneplassering.",
+        "bilde": "bilder/utstyr-rigg.jpg"
       },
       {
         "kategori": "Lyd",
         "tittel": "Trådløse mikrofoner",
-        "beskrivelse": "Høsten 2025 investerte vi i nye trådløse systemer. Valget falt på Sennheiser sitt nye EW-DX system. Vi har foreløpig 8 kanaler fordelt på 2 quad mottakere med Dante. Disse har vi 8 beltpacks med bøyler til, samt 2 håndholdte mikrofoner. Iløpet av sommeren 2026 utvides dette til 12 kanaler. "
+        "beskrivelse": "Sennheiser EW-DX system med 8 kanaler — 2 quad Dante-mottakere, 8 beltpacks og 2 håndholdte mikrofoner. Utvides til 12 kanaler sommeren 2026.",
+        "bilde": "bilder/utstyr-rigg.jpg"
       },
       {
         "kategori": "Lys",
         "tittel": "Scenelys og effektbelysning",
-        "beskrivelse": "Lys er det vi i Grevent kan minst om, så her har vi gode samarbeidspartnere vi tar med oss når det er behov for det. Men vi har det vi innimellom trenger selv, og det er 8 stk. Astera Quikspot som kan brukes som frontlys med låvedører, eller uplights på gulvet. Disse er batteridrevne og kan stå på i opptil 20 timer, og styres trådløst. Vi har også litt \"partylys\" til bruk med enkle DJ-oppsett. ",
-        "bilde": "bilder/utstyr-lys.jpg",
-        "tags": [
-          "LED",
-          "frontlys",
-          "dekorlys"
-        ]
+        "beskrivelse": "8× Astera Quikspot — batteridrevne LED-spots perfekt som frontlys eller uplights. Trådløs styring og opptil 20 timers batteritid. Supplert med enkelt partylys for DJ-oppsett.",
+        "bilde": "bilder/utstyr-lys.jpg"
       }
     ]
   },
   "pakker": {
     "tittel": "Velg pakken som passer ditt arrangement",
-    "beskrivelse": "Ferdige pakker for ulike behov — fra enkle presentasjoner til komplette flerkamera-produksjoner. Alle priser er veiledende eks. mva.",
+    "beskrivelse": "Ferdige pakker for ulike behov fra enkle presentasjoner til komplette flerkamera-produksjoner. Alle priser er veiledende eks. mva.",
     "bunntekst": "Trenger du noe annet? Vi skreddersyr gjerne en løsning tilpasset ditt arrangement.",
     "liste": [
       {
         "navn": "Mini",
         "beskrivelse": "Enkel konferanse med presentasjon og grunnleggende lyd. Perfekt for møter og mindre samlinger.",
-        "pris": "15 000",
+        "pris": "99 000",
         "featured": false,
         "inkluderer": [
           "Lydanlegg med trådløse mikrofoner",
-          "Projektor eller skjerm",
-          "Presentasjonsmaskineri",
+          "Preview skjerm",
           "1 tekniker"
         ]
       },
       {
         "navn": "Konferanse",
-        "beskrivelse": "Komplett konferanseproduksjon med flerkamera, lyd, lys og streaming. Vårt mest valgte oppsett.",
-        "pris": "35 000",
+        "beskrivelse": "Komplett konferanseproduksjon med opptak, lyd og lys. Vårt mest valgte oppsett.",
+        "pris": "99 000",
         "featured": true,
         "inkluderer": [
-          "2–3 kameraer (PTZ / operatør)",
+          "1 kamera",
           "Komplett lydanlegg",
           "Scenelys",
-          "Livestreaming",
-          "LED-skjerm eller projektor",
-          "2 teknikere + regibord"
+          "Opptak",
+          "1+ teknikere"
         ]
       },
       {
         "navn": "Storproduksjon",
-        "beskrivelse": "Avansert produksjon for større konferanser med full regi, flere scener og dedikert team.",
-        "pris": "65 000",
+        "beskrivelse": "Avansert produksjon for større konferanser med full regi og livestreaming.",
+        "pris": "99 000",
         "featured": false,
         "inkluderer": [
-          "4+ kameraer med operatører",
+          "3 kameraer",
           "Komplett lyd med monitor",
           "Full lysdesign",
           "Livestreaming med grafikk",
-          "Flere LED-skjermer",
-          "3+ teknikere, produsent og regi"
+          "2+ teknikere, produsent"
         ]
       }
     ]
@@ -186,8 +153,8 @@
     "firmanavn": "Grevent AS",
     "intro": "Vi hjelper deg gjerne med planlegging og gjennomføring av teknisk produksjon for ditt neste arrangement.",
     "epost": "post@grevent.no",
-    "telefon": "+47 XXX XX XXX",
-    "lokasjon": "Oslo-området, Norge",
-    "orgnr": "XXX XXX XXX"
+    "telefon": "+47 958 34 919",
+    "lokasjon": "Nesodden, Norge",
+    "orgnr": "915 347 681"
   }
 }
